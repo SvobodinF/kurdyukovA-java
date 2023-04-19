@@ -17,4 +17,9 @@ public class Triangle {
     public float getYBarycenter() {
         return (A.y + B.y + C.y)/3;
     }
+
+    public static double getSquare(double lenA, double lenB, double lenC){
+        double p = (lenA + lenB + lenC) / 2;
+        return Math.sqrt(p * (p - lenA) * (p - lenB) * (p - lenC));
+    }
 }
