@@ -7,23 +7,18 @@ public class TimeUnit {
 
     public TimeUnit(int inSecond, String[] formats){
         InSecond = inSecond;
+        this.formats = formats;
     }
 
-    public int getSeconds(StringBuilder sb, int seconds){
+    public int getSeconds(int seconds){
         Equal = seconds / InSecond;
         seconds -= Equal * InSecond;
-
-        getString(sb);
+        System.out.println(Equal);
         return seconds;
     }
 
-    private void getString(StringBuilder sb){
-        if (Equal < 0) {
-            return;
-        }
-
-        appendDelimiter(sb);
-        sb.append(Equal).append(" ").append(formatWord(Equal, formats[0], formats[1], formats[2]));
+    public String getString(){
+        return Equal < 0 ? "" : (Equal) + " " + formatWord(Equal, formats[0], formats[1], formats[2]);
     }
 
     private String formatWord(int number, String form1, String form2, String form5) {
