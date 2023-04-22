@@ -3,7 +3,6 @@ package CP3;
 import Utils.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Task37 implements Debuggable {
     @Override
@@ -19,7 +18,7 @@ public class Task37 implements Debuggable {
         while (players.size() > 1){
             number += 3;
 
-            int value = Utils.arrayValidation(players.toArray(), number);
+            int value = Utils.arrayValidation(players, number);
             System.out.println("Lose - " + players.get(value));
             players.remove(value);
         }

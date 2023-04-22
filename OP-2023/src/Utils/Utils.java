@@ -2,6 +2,7 @@ package Utils;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Utils {
@@ -62,8 +63,8 @@ public class Utils {
         return (int) (Math.random() * ++max) + min;
     }
 
-    public static <T> int arrayValidation(T[] array, int index)
+    public static <T> int arrayValidation(ArrayList<T> array, int index)
     {
-        return index - (array.length * (index / array.length));
+        return index - (array.size() * (index / array.size()));
     }
 }
