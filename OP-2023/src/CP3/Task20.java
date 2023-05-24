@@ -25,6 +25,6 @@ public class Task20 implements Debuggable {
             }
         }
 
-        return Utils.matrixToString(result);
+        return Utils.matrixToString(Utils.convertInt2D(result));
     }
 }

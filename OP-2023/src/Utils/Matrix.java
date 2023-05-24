@@ -21,4 +21,9 @@ public class Matrix{
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return Utils.matrixToString(Utils.convertInt2D(matrix));
+    }
 }

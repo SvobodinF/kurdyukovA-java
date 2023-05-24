@@ -7,7 +7,7 @@ public class Task1 implements Debuggable {
         int size = 5;
         int[][] matrix = new Matrix(size).getMatrix();
 
-        System.out.println(Utils.matrixToString(matrix));
+        System.out.println(Utils.matrixToString(Utils.convertInt2D(matrix)));
         System.out.println("----------------");
 
         int[][] transMatrix = new int[size][size];
@@ -17,6 +17,6 @@ public class Task1 implements Debuggable {
             }
         }
 
-        System.out.println(Utils.matrixToString(transMatrix));
+        System.out.println(Utils.matrixToString(Utils.convertInt2D(transMatrix)));
     }
 }

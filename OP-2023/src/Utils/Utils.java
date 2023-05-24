@@ -2,13 +2,31 @@ package Utils;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Utils {
-    public static String matrixToString(int[][] array){
-        String result = Arrays.deepToString((array))
+    public static <T> String matrixToString(T[][] arrays){
+        String result = Arrays.deepToString((arrays))
                 .replace("], ", "]\n")
+                .replace("[[", "[")
+                .replace("]]", "]");
+
+        return result;
+    }
+
+    public static Integer[][] convertInt2D(int[][] arrays){
+        return Stream.of(arrays)
+                .map(array -> IntStream.of(array).boxed().toArray(Integer[]::new))
+                .toArray(Integer[][]::new);
+    }
+
+    public static String matrixToLine(int[][] array){
+        String result = Arrays.deepToString((array))
+                .replace("], ", "]")
                 .replace("[[", "[")
                 .replace("]]", "]");
 
@@ -66,5 +84,17 @@ public class Utils {
     public static <T> int arrayValidation(ArrayList<T> array, int index)
     {
         return index - (array.size() * (index / array.size()));
+    }
+
+    public static Integer[][] listTo2DArray(ArrayList<Integer> array, int width, int height){
+        if(array.size() != width*height)
+            return new Integer[0][];
+
+        Integer[][] result = new Integer[width][height];
+
+        for(int i=0;i<array.size();i++)
+            result[i/height][i%height] = array.get(i);
+
+        return result;
     }
 }
