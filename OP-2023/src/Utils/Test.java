@@ -6,9 +6,28 @@ public class Test {
     public static void main(String[] args) {
         int num = 121421;
         //System.out.println("result = " + majorityElement(new int[]{8,8,7,7,7}));
-        //System.out.println("Is Polindrome - " + (num == reverse(num, 0)));
+        System.out.println("Is Polindrome - " + (num == reverse(num, 0)));
         //System.out.println(Arrays.toString(sortedSquares(new int[]{-5,-3,-2,-1})));
        // rotate(new int[]{1,2,3,4,5,6,7 }, 3);
+
+        System.out.println(strStr("sadbutsad", "sad"));
+    }
+
+    public static int strStr(String haystack, String needle) {
+        int slow = 0;
+        int fast = needle.length();
+
+        while (fast < haystack.length()){
+            System.out.println(haystack.substring(slow, fast));
+            if (haystack.substring(slow, fast).equals(needle)){
+                return slow;
+            }
+
+            slow++;
+            fast++;
+        }
+
+        return -1;
     }
 
     public static int removeElement(int[] nums, int val) {
